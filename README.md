@@ -44,9 +44,13 @@ pip install streamlit tensorflow numpy matplotlib pandas seaborn
 For the application to function correctly, ensure the following files are in the **same directory** as your Python script:
 
 * main.py  
-* trained_model.keras  
+* train.ipynb
+* test.ipynb
 * home_page.jpeg  
-* training_hist.json
+
+### **3\. Craete and Train the Model**
+
+To create the mode, we need to run train.ipynb file which will create and train the model, in addition it also save training history file to track it improvement.
 
 ### **4\. Run the Project**
 
@@ -64,6 +68,8 @@ streamlit run main.py
 6\. To test error handling, try uploading a non-leaf image; the model will still provide the closest matching class from its 38 learned categories.
 
 ## **Screenshots**
+
+The Screenshot of User Interface.
 ![](image/Screenshot1.png)
 
 ![](image/Screenshot2.png)
