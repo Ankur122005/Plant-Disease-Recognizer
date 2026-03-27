@@ -48,11 +48,11 @@ For the application to function correctly, ensure the following files are in the
 * test.ipynb
 * home_page.jpeg  
 
-### **3\. Craete and Train the Model**
+### **4\. Craete and Train the Model**
 
 To create the mode, we need to run train.ipynb file which will create and train the model, in addition it also save training history file to track it improvement.
 
-### **4\. Run the Project**
+### **5\. Run the Project**
 
 Open the terminal to the project file location and execute the given command:
 
