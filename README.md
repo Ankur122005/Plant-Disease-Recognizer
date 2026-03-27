@@ -1,69 +1,86 @@
-Plant Disease Recognition System 🌿🔍
-This project is a comprehensive Deep Learning solution designed to identify diseases in various plant species through image analysis. It leverages a Convolutional Neural Network (CNN) trained on the "New Plant Diseases Dataset" and features a user-friendly web interface built with Streamlit.
+\documentclass[11pt]{article}
 
-🚀 Features
-Disease Detection: Identifies 38 different classes of plant diseases and healthy states across crops like Tomato, Potato, Apple, Corn, and more.
+% Packages for formatting and links
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
 
-Interactive Dashboard: A Streamlit-based web application for easy image uploading and real-time prediction.
+% Setup code listing styles
+\lstset{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    keywordstyle=\color{blue},
+    language=Python
+}
 
-High Accuracy: The model achieves approximately 95% accuracy on the test dataset.
+% Hyperlink styling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+    pdftitle={Plant Disease Recognition README}
+}
 
-End-to-End Pipeline: Includes notebooks for data preprocessing, training, and model evaluation.
+\title{\textbf{Plant Disease Recognition System}}
+\author{Deep Learning Project Documentation}
+\date{\today}
 
-🛠️ Project Structure
-main.py: The Streamlit application script containing the frontend and prediction logic.
+\begin{document}
 
-Train_plant_disease.ipynb: Jupyter notebook used for building and training the CNN model.
+\maketitle
 
-Test_plant_disease.ipynb: Notebook for testing the model and generating classification reports.
+\section{Overview}
+The Plant Disease Recognition System is a deep learning-based application designed to identify 38 different classes of plant diseases from leaf images. The system utilizes a Convolutional Neural Network (CNN) and provides a web-based interface for real-time inference.
 
-trained_model.keras: The pre-trained Keras model file.
+\section{Features}
+\begin{itemize}
+    \item \textbf{High Accuracy:} Achieves approximately 95\% accuracy on the test dataset.
+    \item \textbf{Streamlit UI:} User-friendly web dashboard for image uploads and results.
+    \item \textbf{Comprehensive Coverage:} Detects diseases in crops including Tomato, Potato, Apple, Corn, and Grapes.
+    \item \textbf{End-to-End Pipeline:} Covers everything from data preprocessing and training to deployment.
+\end{itemize}
 
-training_hist.json: Log of the training and validation accuracy/loss over epochs.
+\section{Project Architecture}
+The project consists of the following core components:
+\begin{description}
+    \item[\texttt{main.py}] The Streamlit application entry point.
+    \item[\texttt{trained\_model.keras}] Pre-trained CNN model saved in Keras format.
+    \item[\texttt{Train\_plant\_disease.ipynb}] Notebook containing the training logic and architecture.
+    \item[\texttt{Test\_plant\_disease.ipynb}] Notebook for model evaluation and metrics.
+    \item[\texttt{training\_hist.json}] JSON file storing training/validation loss and accuracy history.
+\end{description}
 
-home_page.jpeg: Visual asset for the web application's landing page.
+\section{Installation}
+To set up the environment, ensure you have Python installed and run the following:
 
-📦 Installation & Setup
-Clone the Repository:
-
-Bash
-git clone https://github.com/your-username/plant-disease-recognition.git
-cd plant-disease-recognition
-Install Dependencies:
-Make sure you have Python installed, then run:
-
-Bash
+\begin{lstlisting}[language=bash]
+# Install required libraries
 pip install streamlit tensorflow numpy matplotlib pandas seaborn
-Run the Application:
+\end{lstlisting}
 
-Bash
+\section{Usage}
+To launch the recognition system, navigate to the project directory and execute:
+
+\begin{lstlisting}[language=bash]
 streamlit run main.py
-🧬 Model Details
-The system uses a Sequential CNN architecture with the following components:
+\end{lstlisting}
 
-Input Layer: Resizes images to 128x128 pixels.
+\section{Model Performance}
+The model was trained on the \textit{New Plant Diseases Dataset} from Kaggle.
+\begin{itemize}
+    \item \textbf{Model Architecture:} Sequential CNN with Max-Pooling and Dropout.
+    \item \textbf{Input Shape:} $128 \times 128 \times 3$ (RGB).
+    \item \textbf{Final Validation Accuracy:} ~95\%.
+\end{itemize}
 
-Convolutional Layers: Multiple layers with ReLU activation for feature extraction.
+\section{Dataset Reference}
+The dataset used for this project can be found on Kaggle: \\
+\url{https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset}
 
-Pooling Layers: Max-pooling to reduce spatial dimensions.
-
-Dense Layers: Fully connected layers leading to a Softmax output representing the 38 classes.
-
-Performance Summary
-Based on training_hist.json, the model shows strong convergence:
-
-Training Accuracy: ~96.7%
-
-Validation Accuracy: ~95% (as seen in Train_plant_disease.ipynb classification report).
-
-📖 How to Use
-Launch the app via Streamlit.
-
-Navigate to the Disease Recognition page via the sidebar.
-
-Upload a clear image of a plant leaf.
-
-Click Predict to view the identified disease/status.
-
-📊 Dataset
-The model was trained using the New Plant Diseases Dataset available on Kaggle, which consists of about 87,000 images of healthy and diseased crop leaves.
+\end{document}
