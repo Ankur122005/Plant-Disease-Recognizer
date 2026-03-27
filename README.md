@@ -16,10 +16,10 @@ This is a deep learning-based web application built with Python that identifies 
 ## **Technologies/Tools Used**
 
 * **Programming Language:** Python 3.x  
-* **Deep Learning Framework:** * tensorflow (For model loading and inference)  
+* **Deep Learning Framework:**  Tensorflow (For model loading and inference)  
   * keras (For building and training the CNN)  
-* **GUI/Web Framework:** * streamlit (For the interactive web application)  
-* **External Libraries:** * numpy (For numerical arrays and image processing)  
+* **GUI/Web Framework:**  Streamlit (For the interactive web application)  
+* **External Libraries:**  Numpy (For numerical arrays and image processing)  
   * matplotlib & seaborn (For training history visualization)  
   * pandas (For metadata and logging)
 
@@ -65,5 +65,7 @@ streamlit run main.py
 
 ## **Screenshots**
 ![](image/Screenshot1.png)
+
 ![](image/Screenshot2.png)
+
 ![](image/Screenshot3.png)
