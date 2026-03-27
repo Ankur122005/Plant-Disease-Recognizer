@@ -1,86 +1,69 @@
-\documentclass[11pt]{article}
+# **Plant Disease Recognition System**
 
-% Packages for formatting and links
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage{xcolor}
-\usepackage{titlesec}
+## **Overview of the Project**
 
-% Setup code listing styles
-\lstset{
-    backgroundcolor=\color{gray!10},
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    keywordstyle=\color{blue},
-    language=Python
-}
+This is a deep learning-based web application built with Python that identifies various plant diseases from images of leaves. It uses a Convolutional Neural Network (CNN) trained on the "New Plant Diseases Dataset" to recognize 38 different classes of healthy and diseased crop leaves. The application features a streamlined dashboard built with Streamlit that allows users to upload photos and receive instant diagnostic results, helping to ensure a healthier harvest through early detection.
 
-% Hyperlink styling
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    urlcolor=cyan,
-    pdftitle={Plant Disease Recognition README}
-}
+## **Features**
 
-\title{\textbf{Plant Disease Recognition System}}
-\author{Deep Learning Project Documentation}
-\date{\today}
+* **Real-time Disease Prediction:** Analyzes uploaded leaf images instantly using a pre-trained Keras model.  
+* **Interactive Dashboard:** A clean, modern interface built using Streamlit with easy sidebar navigation.  
+* **38 Class Recognition:** Detects health status for a wide range of crops including Tomato, Potato, Apple, Corn, and Grapes.  
+* **High-Accuracy Model:** The underlying CNN architecture achieves approximately 95% validation accuracy.  
+* **Automated Processing:** Automatically handles image resizing to 128x128 pixels and normalization for the model.  
+* **Detailed Documentation:** Includes an "About" page with dataset information and project mission.
 
-\begin{document}
+## **Technologies/Tools Used**
 
-\maketitle
+* **Programming Language:** Python 3.x  
+* **Deep Learning Framework:** * tensorflow (For model loading and inference)  
+  * keras (For building and training the CNN)  
+* **GUI/Web Framework:** * streamlit (For the interactive web application)  
+* **External Libraries:** * numpy (For numerical arrays and image processing)  
+  * matplotlib & seaborn (For training history visualization)  
+  * pandas (For metadata and logging)
 
-\section{Overview}
-The Plant Disease Recognition System is a deep learning-based application designed to identify 38 different classes of plant diseases from leaf images. The system utilizes a Convolutional Neural Network (CNN) and provides a web-based interface for real-time inference.
+## **Steps to Install & Run the Project**
 
-\section{Features}
-\begin{itemize}
-    \item \textbf{High Accuracy:} Achieves approximately 95\% accuracy on the test dataset.
-    \item \textbf{Streamlit UI:} User-friendly web dashboard for image uploads and results.
-    \item \textbf{Comprehensive Coverage:} Detects diseases in crops including Tomato, Potato, Apple, Corn, and Grapes.
-    \item \textbf{End-to-End Pipeline:} Covers everything from data preprocessing and training to deployment.
-\end{itemize}
+### **Prerequisites**
 
-\section{Project Architecture}
-The project consists of the following core components:
-\begin{description}
-    \item[\texttt{main.py}] The Streamlit application entry point.
-    \item[\texttt{trained\_model.keras}] Pre-trained CNN model saved in Keras format.
-    \item[\texttt{Train\_plant\_disease.ipynb}] Notebook containing the training logic and architecture.
-    \item[\texttt{Test\_plant\_disease.ipynb}] Notebook for model evaluation and metrics.
-    \item[\texttt{training\_hist.json}] JSON file storing training/validation loss and accuracy history.
-\end{description}
+Ensure you have Python installed on your system. An active internet connection is required to install the necessary libraries via pip.
 
-\section{Installation}
-To set up the environment, ensure you have Python installed and run the following:
+### **1\. Clone or Download the Repository**
 
-\begin{lstlisting}[language=bash]
-# Install required libraries
+Download the Python script (main.py) and the model file (trained_model.keras) and place them in a project folder.
+
+### **2\. Install Dependencies**
+
+Open your terminal or command prompt, navigate to the project folder, and install the required external Python libraries using pip:
+
 pip install streamlit tensorflow numpy matplotlib pandas seaborn
-\end{lstlisting}
 
-\section{Usage}
-To launch the recognition system, navigate to the project directory and execute:
+### **3\. Prepare Project Assets**
 
-\begin{lstlisting}[language=bash]
+For the application to function correctly, ensure the following files are in the **same directory** as your Python script:
+
+* main.py  
+* trained_model.keras  
+* home_page.jpeg  
+* training_hist.json
+
+### **4\. Run the Project**
+
+Open the terminal to the project file location and execute the given command:
+
 streamlit run main.py
-\end{lstlisting}
 
-\section{Model Performance}
-The model was trained on the \textit{New Plant Diseases Dataset} from Kaggle.
-\begin{itemize}
-    \item \textbf{Model Architecture:} Sequential CNN with Max-Pooling and Dropout.
-    \item \textbf{Input Shape:} $128 \times 128 \times 3$ (RGB).
-    \item \textbf{Final Validation Accuracy:} ~95\%.
-\end{itemize}
+## **Instructions for Testing**
 
-\section{Dataset Reference}
-The dataset used for this project can be found on Kaggle: \\
-\url{https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset}
+1\. Upon running the script, a new browser tab will open at http://localhost:8501.  
+2\. From the sidebar, select the **"Disease Recognition"** page.  
+3\. Click the **"Browse files"** button to upload an image of a plant leaf from your computer.  
+4\. Click the **"Predict"** button to start the analysis.  
+5\. The application will display the uploaded image and the predicted disease class (e.g., "Potato___Early_blight").  
+6\. To test error handling, try uploading a non-leaf image; the model will still provide the closest matching class from its 38 learned categories.
 
-\end{document}
+## **Screenshots**
+![](image/Screenshot1.png)
+![](image/Screenshot2.png)
+![](image/Screenshot3.png)
